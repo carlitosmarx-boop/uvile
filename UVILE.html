@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UVILE - Crema Corporal Antioxidante de Uvilla</title>
+    <!-- Fuentes Google Fonts: Montserrat (títulos) y Open Sans (texto) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS GENERALES Y VARIABLES --- */
+        :root {
+            --verde-botanico: #2D5A27;
+            --verde-suave: #EBF2EA;
+            --dorado-uvilla: #D4AF37;
+            --dorado-calido: #F4C430;
+            --fondo-crema: #FAF8F5;
+            --texto-oscuro: #2C3531;
+            --texto-gris: #555555;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--fondo-crema);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- BOTONES --- */
+        .btn-primary {
+            background-color: var(--verde-botanico);
+            color: var(--blanco);
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: #21431D;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            border: 2px solid var(--verde-botanico);
+            color: var(--verde-botanico);
+            padding: 10px 26px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--verde-botanico);
+            color: var(--blanco);
+        }
+
+        /* --- ENCABEZADO (HEADER) --- */
+        header {
+            background-color: var(--blanco);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--verde-botanico);
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: var(--dorado-uvilla);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--texto-oscuro);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--dorado-uvilla);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--fondo-crema) 0%, var(--verde-suave) 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            color: var(--verde-botanico);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            color: var(--texto-gris);
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            text-align: center;
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 380px;
+            background-color: #E2E8E0;
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--texto-gris);
+            font-weight: 600;
+            border: 2px dashed var(--verde-botanico);
+        }
+
+        /* --- BARRA DE CONFIANZA --- */
+        .trust-bar {
+            background-color: var(--verde-botanico);
+            color: var(--blanco);
+            padding: 15px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .trust-flex {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* --- BENEFICIOS --- */
+        .benefits {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: var(--verde-botanico);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            color: var(--texto-gris);
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background-color: var(--blanco);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 10px;
+            color: var(--verde-botanico);
+        }
+
+        /* --- PRODUCTOS --- */
+        .products {
+            padding: 80px 0;
+            background-color: var(--blanco);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--fondo-crema);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid #EAEAEA;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-img {
+            height: 200px;
+            background-color: #DDD;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--texto-gris);
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--texto-oscuro);
+        }
+
+        .product-info p {
+            font-size: 14px;
+            color: var(--texto-gris);
+            margin-bottom: 15px;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--verde-botanico);
+            margin-bottom: 15px;
+        }
+
+        /* --- PIE DE PÁGINA (FOOTER) --- */
+        footer {
+            background-color: var(--texto-oscuro);
+            color: var(--blanco);
+            padding: 60px 0 20px 0;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--dorado-uvilla);
+            margin-bottom: 20px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #CCC;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--blanco);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+            color: #888;
+        }
+
+        /* --- RESPONSIVO --- */
+        @media (max-width: 768px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 36px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none; /* Se puede implementar un menú hamburguesa posteriormente */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO -->
+    <header>
+        <div class="container nav-bar">
+            <div class="logo">UVILE<span>.</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#origen">Nuestro Origen</a></li>
+                </ul>
+            </nav>
+            <a href="#productos" class="btn-primary">Comprar Ahora</a>
+        </div>
+    </header>
+
+    <!-- 2. HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Naturaleza que te ilumina.</h1>
+                <p>Descubre la primera crema corporal antioxidante formulada con la potencia regenerativa de la uvilla andina. Nutrición profunda y brillo natural para tu piel.</p>
+                <div class="hero-buttons">
+                    <a href="#productos" class="btn-primary">Descubrir Catálogo</a>
+                    <a href="#beneficios" class="btn-secondary">Saber Más</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="img-placeholder">
+                    [ Imagen Principal: Crema UVILE con Uvillas ]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BARRA DE CONFIANZA -->
+    <div class="trust-bar">
+        <div class="container trust-flex">
+            <span>✓ 100% Extracto Natural</span>
+            <span>✓ Libre de Crueldad Animal</span>
+            <span>✓ Envíos a todo el Ecuador</span>
+            <span>✓ Apta para todo tipo de piel</span>
+        </div>
+    </div>
+
+    <!-- 3. BENEFICIOS -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <h2 class="section-title">El secreto andino para una piel radiante</h2>
+            <p class="section-subtitle">La uvilla es rica en vitaminas A, C y antioxidantes. Llevamos toda su fuerza botánica de los campos ecuatorianos a tu rutina diaria.</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Poder Antioxidante</h3>
+                    <p>Combate los radicales libres y el envejecimiento prematuro, devolviendo la vitalidad y firmeza a tu piel.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💧</div>
+                    <h3>Hidratación Ligera</h3>
+                    <p>Textura suave de rápida absorción que hidrata profundamente sin dejar sensación grasosa.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌿</div>
+                    <h3>Luminosidad Natural</h3>
+                    <p>La vitamina C natural resalta el brillo saludable y atenúa gradualmente irregularidades de tono.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. PRODUCTOS -->
+    <section class="products" id="productos">
+        <div class="container">
+            <h2 class="section-title" style="text-align: center;">Nuestra Colección</h2>
+            <p class="section-subtitle" style="text-align: center;">Elige la fórmula que mejor se adapte a tu piel.</p>
+
+            <div class="products-grid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-img">[ Foto UVILE Clásica ]</div>
+                    <div class="product-info">
+                        <div>
+                            <h3>UVILE Clásica (180ml)</h3>
+                            <p>Fórmula original con extracto concentrado de uvilla para uso diario.</p>
+                        </div>
+                        <div>
+                            <div class="product-price">$10.50</div>
+                            <button class="btn-primary" style="width: 100%;">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-img">[ Foto UVILE Noche ]</div>
+                    <div class="product-info">
+                        <div>
+                            <h3>UVILE Noche Regeneradora</h3>
+                            <p>Enriquecida con rosa mosqueta y vitamina E para restaurar la piel mientras duermes.</p>
+                        </div>
+                        <div>
+                            <div class="product-price">$12.00</div>
+                            <button class="btn-primary" style="width: 100%;">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-img">[ Foto UVILE Protect ]</div>
+                    <div class="product-info">
+                        <div>
+                            <h3>UVILE Protect (FPS 30)</h3>
+                            <p>Hidratación profunda combinada con protección solar contra rayos UV.</p>
+                        </div>
+                        <div>
+                            <div class="product-price">$13.50</div>
+                            <button class="btn-primary" style="width: 100%;">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-img">[ Foto Kit Viajero ]</div>
+                    <div class="product-info">
+                        <div>
+                            <h3>Kit Viajero UVILE</h3>
+                            <p>Formatos compactos listos para llevar en tu bolso o mochila.</p>
+                        </div>
+                        <div>
+                            <div class="product-price">$8.00</div>
+                            <button class="btn-primary" style="width: 100%;">Añadir al Carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. PIE DE PÁGINA -->
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="color: var(--blanco); margin-bottom: 15px;">UVILE<span>.</span></div>
+                <p style="color: #AAA; font-size: 14px;">Piel viva y fresca con esencia de uvilla andina.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Soporte</h4>
+                <ul>
+                    <li><a href="#">Términos y Condiciones</a></li>
+                    <li><a href="#">Políticas de Privacidad</a></li>
+                    <li><a href="#">Envíos y Devoluciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contacto</h4>
+                <ul>
+                    <li style="color: #AAA;">hola@uvile.ec</li>
+                    <li style="color: #AAA;">WhatsApp: +593 9X XXX XXXX</li>
+                    <li style="color: #AAA;">Ecuador</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2026 UVILE Skin. Todos los derechos reservados.
+        </div>
+    </footer>
+
+</body>
+</html>
