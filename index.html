@@ -10,15 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- ESTILOS GENERALES Y VARIABLES --- */
+        /* --- ESTILOS GENERALES Y VARIABLES BASADAS EN EL STAND --- */
         :root {
-            --verde-botanico: #2D5A27;
-            --verde-suave: #EBF2EA;
-            --dorado-uvilla: #D4AF37;
-            --dorado-calido: #F4C430;
-            --fondo-crema: #FAF8F5;
-            --texto-oscuro: #2C3531;
-            --texto-gris: #555555;
+            --verde-hoja: #2E5328;
+            --verde-hoja-oscuro: #23411F;
+            --verde-suave: #E2EBE0;
+            --madera-clara: #E3C79E;
+            --madera-calida: #F0E2CE;
+            --dorado-uvilla: #D98A2B;
+            --dorado-brillante: #E5A136;
+            --fondo-crema: #FAF6EF;
+            --texto-oscuro: #2A2018;
+            --texto-marron: #4A2E19;
+            --texto-gris: #5C554E;
             --blanco: #FFFFFF;
         }
 
@@ -52,7 +56,7 @@
 
         /* --- BOTONES --- */
         .btn-primary {
-            background-color: var(--verde-botanico);
+            background-color: var(--verde-hoja);
             color: var(--blanco);
             padding: 12px 28px;
             border-radius: 30px;
@@ -64,13 +68,13 @@
         }
 
         .btn-primary:hover {
-            background-color: #21431D;
+            background-color: var(--verde-hoja-oscuro);
             transform: translateY(-2px);
         }
 
         .btn-secondary {
-            border: 2px solid var(--verde-botanico);
-            color: var(--verde-botanico);
+            border: 2px solid var(--verde-hoja);
+            color: var(--verde-hoja);
             padding: 10px 26px;
             border-radius: 30px;
             font-weight: 600;
@@ -79,7 +83,7 @@
         }
 
         .btn-secondary:hover {
-            background-color: var(--verde-botanico);
+            background-color: var(--verde-hoja);
             color: var(--blanco);
         }
 
@@ -90,6 +94,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            border-bottom: 3px solid var(--madera-clara);
         }
 
         .nav-bar {
@@ -102,7 +107,7 @@
         .logo {
             font-size: 28px;
             font-weight: 700;
-            color: var(--verde-botanico);
+            color: var(--verde-hoja);
             letter-spacing: 2px;
         }
 
@@ -129,7 +134,7 @@
         /* --- HERO SECTION --- */
         .hero {
             padding: 80px 0;
-            background: linear-gradient(135deg, var(--fondo-crema) 0%, var(--verde-suave) 100%);
+            background: linear-gradient(135deg, var(--fondo-crema) 0%, var(--madera-calida) 100%);
         }
 
         .hero-grid {
@@ -141,7 +146,7 @@
 
         .hero-text h1 {
             font-size: 48px;
-            color: var(--verde-botanico);
+            color: var(--verde-hoja);
             margin-bottom: 20px;
             line-height: 1.2;
         }
@@ -164,19 +169,19 @@
         .img-placeholder {
             width: 100%;
             height: 380px;
-            background-color: #E2E8E0;
+            background-color: var(--madera-clara);
             border-radius: 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--texto-gris);
+            color: var(--texto-marron);
             font-weight: 600;
-            border: 2px dashed var(--verde-botanico);
+            border: 2px dashed var(--verde-hoja);
         }
 
         /* --- BARRA DE CONFIANZA --- */
         .trust-bar {
-            background-color: var(--verde-botanico);
+            background-color: var(--verde-hoja);
             color: var(--blanco);
             padding: 15px 0;
             text-align: center;
@@ -198,7 +203,7 @@
 
         .section-title {
             font-size: 32px;
-            color: var(--verde-botanico);
+            color: var(--verde-hoja);
             margin-bottom: 15px;
         }
 
@@ -218,7 +223,8 @@
             background-color: var(--blanco);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--dorado-uvilla);
             transition: transform 0.3s ease;
         }
 
@@ -233,7 +239,7 @@
 
         .benefit-card h3 {
             margin-bottom: 10px;
-            color: var(--verde-botanico);
+            color: var(--verde-hoja);
         }
 
         /* --- PRODUCTOS --- */
@@ -252,7 +258,7 @@
             background-color: var(--fondo-crema);
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid #EAEAEA;
+            border: 1px solid var(--madera-clara);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -260,11 +266,11 @@
 
         .product-img {
             height: 200px;
-            background-color: #DDD;
+            background-color: var(--madera-calida);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--texto-gris);
+            color: var(--texto-marron);
         }
 
         .product-info {
@@ -290,7 +296,7 @@
         .product-price {
             font-size: 20px;
             font-weight: 700;
-            color: var(--verde-botanico);
+            color: var(--dorado-uvilla);
             margin-bottom: 15px;
         }
 
@@ -299,6 +305,7 @@
             background-color: var(--texto-oscuro);
             color: var(--blanco);
             padding: 60px 0 20px 0;
+            border-top: 5px solid var(--dorado-uvilla);
         }
 
         .footer-grid {
@@ -309,7 +316,7 @@
         }
 
         .footer-col h4 {
-            color: var(--dorado-uvilla);
+            color: var(--madera-clara);
             margin-bottom: 20px;
         }
 
@@ -327,7 +334,7 @@
         }
 
         .footer-col ul li a:hover {
-            color: var(--blanco);
+            color: var(--madera-clara);
         }
 
         .copyright {
@@ -354,7 +361,7 @@
             }
 
             .nav-links {
-                display: none; /* Se puede implementar un menú hamburguesa posteriormente */
+                display: none;
             }
         }
     </style>
